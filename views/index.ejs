@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Textbook and Answer Book</title>
+  </head>
+  <body>
+    <h1>Textbooks and Answer Books Downloader</h1>
+    <form action="/api/website/myanmar/school/books/upload" method="POST" enctype="multipart/form-data">
+  <label for="grade">Select Grade:</label>
+  <select name="grade" required>
+    <option value="Grade_1">Grade 1</option>
+    <option value="Grade_2">Grade 2</option>
+    <option value="Grade_3">Grade 3</option>
+    <option value="Grade_4">Grade 4</option>
+    <option value="Grade_5">Grade 5</option>
+    <option value="Grade_6">Grade 6</option>
+    <option value="Grade_7">Grade 7</option>
+    <option value="Grade_8">Grade 8</option>
+    <option value="Grade_9">Grade 9</option>
+    <option value="Grade_10">Grade 10</option>
+    <option value="Grade_11">Grade 11</option>
+    <option value="Grade_12">Grade 12</option>
+  </select><br><br>
+
+  <label for="subject">Select Subject:</label>
+  <select name="subject" required>
+    <option value="Myanmar">Myanmar</option>
+    <option value="Maths">Maths</option>
+    <option value="English">English</option>
+    <option value="Science">Science</option>
+    <option value="Physics">Physics</option>
+    <option value="History">History</option>
+    <option value="Life_Skills">Life Skills</option>
+    <option value="Geography">Geography</option>
+    <option value="Social_Studies">Social Studies</option>
+    <option value="Economics">Economics</option>
+    <option value="Biology">Biology</option>
+    <option value="Art">Art</option>
+  </select><br><br>
+
+  <label for="fileType">File Type:</label>
+  <select name="fileType" required>
+    <option value="Textbook">Textbook</option>
+    <option value="Answer_Book">Answer Book</option>
+  </select><br><br>
+
+  <label for="pdfFile">Upload PDF:</label>
+  <input type="file" name="pdfFile" required><br><br>
+
+  <label for="thumbnail">Upload Thumbnail:</label>
+  <input type="file" name="thumbnail" required><br><br>
+
+  <label for="curriculumType">Select Curriculum Type:</label>
+  <select name="curriculumType" required>
+    <option value="New">New Curriculum</option>
+    <option value="Old">Old Curriculum</option>
+  </select><br><br>
+
+  <label for="courseLength">Course Length:</label>
+  <select name="courseLength" required>
+    <option value="Full">Full</option>
+    <option value="Half">Half</option>
+  </select><br><br>
+
+  <label for="part">Part:</label>
+  <select name="part">
+    <option value="">Select Part</option>
+    <option value="1st_part">1st Part</option>
+    <option value="2nd_part">2nd Part</option>
+    <option value="3rd_part">3rd Part</option>
+  </select><br><br>
+
+  <button type="submit">Upload</button>
+</form>
+  </body>
+</html>

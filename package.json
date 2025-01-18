@@ -1,0 +1,29 @@
+{
+  "name": "myanmar-books",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "textbook",
+    "answer-book",
+    "myanmar-books",
+    "school-books"
+  ],
+  "author": "Mohammed Ismail",
+  "license": "ISC",
+  "description": "Myanmar Textbooks and Answer_Books downloader website",
+  "dependencies": {
+    "cloudinary": "^2.5.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "mongoose": "^8.9.5",
+    "multer": "^1.4.5-lts.1",
+    "uuid": "^11.0.5"
+  }
+}

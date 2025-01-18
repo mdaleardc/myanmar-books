@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book List</title>
+    <style>
+      /* Reset default styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      body {
+        background-color: #f0f4f8;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      h1 {
+        margin-bottom: 30px;
+        color: #333;
+      }
+
+      /* Book grid */
+      .book-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        width: 100%;
+        max-width: 1200px;
+      }
+
+      /* Book card */
+      .book-card {
+        background-color: #fBfBfB;
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .book-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .book-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+      
+      .img-div {
+        width: fit-cotent;
+        height: 250px;
+        margin-bottom: 10px;
+      }
+
+      .book-title {
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 5px;
+      }
+
+      .book-subject {
+        font-size: 18px;
+        color: #666;
+        margin-bottom: 10px;
+      }
+
+      .course-info {
+        font-size: 14px;
+        color: #555;
+        margin-bottom: 8px;
+      }
+
+      .download-btn {
+        display: inline-block;
+        padding: 8px 15px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .download-btn:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Download All PDF Books For Free</h1>
+
+    <div class="book-container">
+      <% list.forEach((item) => { %>
+      <div class="book-card">
+        <div class="img-div">
+        <img src="<%= item.thumbnailUrl %>" alt="book's thumbnail" />
+        </div>
+        <p class="book-subject"><%= item.subject %></p>
+
+        <!-- Show course length and part if not full -->
+        <% if (item.courseLength !== "Full") { %>
+        <p class="course-info">
+          <strong><%= item.courseLength %></strong>
+          <% if (item.part) { %>
+          - <strong><%= item.part %></strong>
+          <% } %>
+        </p>
+        <% } %>
+
+        <!-- Book Title -->
+        <p class="book-title"><%= item.title.replace(/[_-]/g, " ").replace("Answer Book", "အဖြေစုံ") %></p>
+
+        <!-- Download Button -->
+        <a href="<%= item.pdfUrl %>" target="_blank" class="download-btn">Download PDF</a>
+      </div>
+      <% }) %>
+    </div>
+  </body>
+</html>
